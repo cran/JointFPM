@@ -10,7 +10,7 @@
 #'    A formula of the following form `Surv(...) ~ 1`.
 #'    The `Surv` objects needs to be of `type ==  'counting'` with the
 #'    following arguments:
-#'    \itemize{
+#'    \describe{
 #'      \item{`time`: }{Start of follow-up time for each event episode, i.e.,
 #'      usually 0 for the competing event and the first occurrence of the
 #'      recurrent event. For every subsequent event the follow-up can either
@@ -21,7 +21,7 @@
 #'      \item{`status`: }{Event indicator for both terminal and recurrent
 #'      event.}
 #'      \item{`type`: }{Has to be `counting`.}
-#'    }
+#' }
 #'
 #' @param re_model
 #'    A formula object specifying the model for the recurrent event
@@ -89,35 +89,6 @@
 #'    AIC and BIC.
 #'
 #' @examples
-#' library(data.table) # For data preparations
-#'
-#' # Load bladder cancer dataset from survival package
-#' bldr_df <- as.data.table(survival::bladder1)
-#' bldr_df <- bldr_df[, .(id, treatment, start, stop, status)]
-#'
-#' # Define dataset for competing event times
-#' bldr_ce <- bldr_df[, .SD[stop == max(stop)],
-#'                    by = id]
-#'
-#' bldr_ce[, `:=`(ce = 1,
-#'                re = 0,
-#'                event = as.numeric(status %in% 2:3),
-#'                start = 0)]
-#'
-#' # Define dataset for bladder cancer recurrences
-#' bldr_re <- bldr_df[,
-#'                    `:=`(ce = 0,
-#'                         re = 1,
-#'                         event = as.numeric(status == 1))]
-#'
-#' # Combine datasets into one stacked dataset
-#' bldr_stacked <- rbindlist(list(bldr_ce, bldr_re))
-#'
-#' bldr_stacked[, `:=`(pyridoxine = as.numeric(treatment == "pyridoxine"),
-#'                     thiotepa   = as.numeric(treatment == "thiotepa"))]
-#'
-#' bldr_stacked$stop[bldr_stacked$stop == 0] <- 1 # Add one day survival
-#'
 #' # Test different dfs
 #' test_dfs_JointFPM(Surv(time  = start,
 #'                        time2 = stop,
@@ -132,7 +103,7 @@
 #'                   tvc_ce_terms = list(thiotepa   = 1:2),
 #'                   tvc_re_terms = list(pyridoxine = 2),
 #'                   cluster  = "id",
-#'                   data     = bldr_stacked)
+#'                   data     = bladder1_stacked)
 #'
 #' @import rstpm2
 #'

@@ -22,7 +22,7 @@ JointFPM(
 \item{surv}{A formula of the following form \code{Surv(...) ~ 1}.
 The \code{Surv} objects needs to be of \code{type ==  'counting'} with the
 following arguments:
-\itemize{
+\describe{
 \item{\code{time}: }{Start of follow-up time for each event episode, i.e.,
 usually 0 for the competing event and the first occurrence of the
 recurrent event. For every subsequent event the follow-up can either
@@ -86,7 +86,7 @@ times and event indicator for the recurrent event, e.g.:
 }
 \value{
 An object of class \code{JointFPM} with the following elements:
-\itemize{
+\describe{
 \item{\code{model}: }{The fitted FPM object,}
 \item{\code{re_terms}: }{The terms used to model the recurrent event model,}
 \item{\code{ce_terms}: }{The terms used to model the competing event model,}
@@ -101,39 +101,6 @@ events at different time points. This function is a wrapper around
 \code{rstpm2::stpm2()}.
 }
 \examples{
-library(data.table) # For data preparations
-
-# Load bladder cancer dataset from survival package
-bldr_df <- as.data.table(survival::bladder1)
-bldr_df <- bldr_df[, .(id, treatment, start, stop, status)]
-
-# Define dataset for competing event times
-bldr_ce <- bldr_df[, .SD[stop == max(stop)],
-                   by = id]
-
-bldr_ce[, `:=`(ce = 1,
-               re = 0,
-               event = as.numeric(status \%in\% 2:3),
-               start = 0)]
-
-# Define dataset for bladder cancer recurrences
-bldr_re <- bldr_df[,
-                   `:=`(ce = 0,
-                        re = 1,
-                        event = as.numeric(status == 1))]
-
-# Combine datasets into one stacked dataset
-
-bldr_stacked <- rbindlist(list(bldr_ce, bldr_re))
-
-bldr_stacked[, `:=`(pyridoxine = as.numeric(treatment == "pyridoxine"),
-                    thiotepa   = as.numeric(treatment == "thiotepa"))]
-
-bldr_stacked$stop[bldr_stacked$stop == 0] <- 1 # Add one day survival
-
-# Print stacked dataset
-head(bldr_stacked)
-
 JointFPM(Surv(time  = start,
               time2 = stop,
               event = event,
@@ -149,6 +116,6 @@ JointFPM(Surv(time  = start,
          tvc_re_terms = list(pyridoxine = 2,
                              thiotepa   = 2),
          cluster  = "id",
-         data     = bldr_stacked)
+         data     = bladder1_stacked)
 
 }
