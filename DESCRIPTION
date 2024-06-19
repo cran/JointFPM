@@ -12,8 +12,8 @@ Authors@R: c(person(given = "Joshua P.",
              person(given  = "Mark",
                     family = "Clements",
                     role   = "ctb"))
-Version: 1.2.0
-Date: 2024-01-22
+Version: 1.2.1
+Date: 2024-06-19
 Description: Implementation of a parametric joint model for modelling recurrent
   and competing event processes using generalised survival models. The joint
   model can subsequently be used to predict the mean number of events in the
@@ -36,11 +36,11 @@ Config/testthat/parallel: true
 Config/testthat/start-first: watcher, Parallel*
 LazyData: true
 NeedsCompilation: no
-Packaged: 2024-01-22 08:49:30 UTC; josent
+Packaged: 2024-06-19 21:27:19 UTC; josent
 Author: Joshua P. Entrop [aut, cre, cph]
     (<https://orcid.org/0000-0003-1614-8096>),
   Alessandro Gasparini [ctb],
   Mark Clements [ctb]
 Maintainer: Joshua P. Entrop <joshuaentrop@posteo.de>
 Repository: CRAN
-Date/Publication: 2024-01-22 09:12:46 UTC
+Date/Publication: 2024-06-19 21:40:14 UTC
