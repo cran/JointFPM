@@ -12,11 +12,12 @@ Authors@R: c(person(given = "Joshua P.",
              person(given  = "Mark",
                     family = "Clements",
                     role   = "ctb"))
-Version: 1.2.1
-Date: 2024-06-19
+Version: 1.2.2
+Date: 2025-02-20
 Description: Implementation of a parametric joint model for modelling recurrent
-  and competing event processes using generalised survival models. The joint
-  model can subsequently be used to predict the mean number of events in the
+  and competing event processes using generalised survival models as described in
+  Entrop et al., (2005) <doi:10.1002/bimj.70038>. The joint  model can 
+  subsequently be used to predict the mean number of events in the
   presence of competing risks at different time points. Comparisons of the mean
   number of event functions, e.g. the differences in mean number of events
   between two exposure groups, are also available.
@@ -25,22 +26,22 @@ URL: https://github.com/entjos/JointFPM,
 BugReports: https://github.com/entjos/JointFPM/issues
 License: CC BY 4.0
 Encoding: UTF-8
-RoxygenNote: 7.3.0
+RoxygenNote: 7.3.2
 Imports: rstpm2 (>= 1.5.2), survival (>= 3.2-13), data.table (>=
         1.14.2), rlang (>= 1.1.0), lifecycle, rmutil, cli, matrixStats,
         statmod
-Depends: R (>= 4.0)
+Depends: R (>= 4.1.0)
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Config/testthat/parallel: true
 Config/testthat/start-first: watcher, Parallel*
 LazyData: true
 NeedsCompilation: no
-Packaged: 2024-06-19 21:27:19 UTC; josent
+Packaged: 2025-02-20 09:58:27 UTC; josent
 Author: Joshua P. Entrop [aut, cre, cph]
     (<https://orcid.org/0000-0003-1614-8096>),
   Alessandro Gasparini [ctb],
   Mark Clements [ctb]
 Maintainer: Joshua P. Entrop <joshuaentrop@posteo.de>
 Repository: CRAN
-Date/Publication: 2024-06-19 21:40:14 UTC
+Date/Publication: 2025-02-20 12:20:14 UTC

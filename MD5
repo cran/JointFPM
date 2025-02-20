@@ -1,6 +1,6 @@
-3e8d581f34104570bfe5698259a45794 *DESCRIPTION
+bec10194c8cf5dd6683ea48f27b13cb2 *DESCRIPTION
 c2be99794c5c483335492bca92d44a4a *NAMESPACE
-083e8c9fe5b9999498e69a926328ee3a *NEWS.md
+0adb28b9a71a0a542262e1e066cbe356 *NEWS.md
 34f2ca4dcb1759c44be43c8ebcb56bc2 *R/JointFPM-package.R
 fa4191677aed4e7383dfbd8cfd2c4091 *R/JointFPM.R
 4bc7a9a24f773b93effc03b740d19810 *R/bladder1_stacked.R
@@ -12,8 +12,10 @@ fde33901d9b9787b95f038b4d01d209d *R/mean_no.R
 4d1ba76f04e187f12ac916cd3df7bfb4 *R/test_df.R
 92faeeb9bcad76f82dc597e1c301052b *R/test_dfs_JointFPM.R
 a3af7a8166804b8f51163f66c90dad1b *README.md
+1dda19015f0aa969acee990c150e3ac9 *build/partial.rdb
 c605dd3d5f7f9289a71b750ea6ffa73e *data/bladder1_stacked.rda
-0110e777661fa4b72b8849c30255cbc9 *man/JointFPM-package.Rd
+64e9543d5850a597e786ee14b1cc8e70 *inst/CITATION
+b2e3945cebba34a7909887ef55f4e987 *man/JointFPM-package.Rd
 12453fdbb58adbb00839bbbf010cd1d8 *man/JointFPM.Rd
 b5f8be98f8283d0854064e077b213f4d *man/bladder1_stacked.Rd
 cb1e46f469cfbbbde29c8b5113e1d789 *man/figures/lifecycle-archived.svg
